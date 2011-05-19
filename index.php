@@ -23,15 +23,30 @@ wp_head();
 			<div id="content" role="main">
 
 <?php 
-$args = array( 'post_type' => 'fs_slide');
+$args = array( 'post_type' => 'fs_slide', 'orderby' => 'menu_order', 'order' => 'ASC');
 $loop = new WP_Query( $args );
-while ( $loop->have_posts() ) : $loop->the_post();
-	echo '<div class="fs_slide">';
-	the_title();
-	the_content();
-	echo '</div>';
-endwhile;
+if($loop->have_posts()){ ?>
+  <div class="fs_slide_container">
+  <?php 
+  while ( $loop->have_posts() ) : $loop->the_post();
+  ?>
+  	<div class="fs_slide <?php echo get_post_meta($post->ID, 'slide_style', true) ?>">
+    <?php 
+  	the_title();
+  	the_content();
+    ?>
+  	</div>
+    <?php 
+  endwhile;
+  ?>
+  </div> <!-- fs_slide_container -->
+<?php 
+  } else {
+  echo '<h1>None found.</h1>';
+}
 ?>
+
+
 
 			</div><!-- #content -->
 		</div><!-- #container -->

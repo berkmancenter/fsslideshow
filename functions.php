@@ -1,6 +1,8 @@
 <?php 
 
 wp_enqueue_script('jquery');
+wp_enqueue_script('cycle', get_bloginfo('stylesheet_directory') . '/jquery.cycle.all.min.js');
+wp_enqueue_script('fsslideshow', get_bloginfo('stylesheet_directory') . '/fsslideshow.js');
 
 add_action( 'init', 'fsslideshow_create_post_types' );
 
