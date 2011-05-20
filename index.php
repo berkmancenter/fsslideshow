@@ -31,10 +31,10 @@ if($loop->have_posts()){ ?>
   while ( $loop->have_posts() ) : $loop->the_post();
   ?>
   	<div class="fs_slide <?php echo get_post_meta($post->ID, 'slide_style', true) ?>">
-    <?php 
-  	the_title();
-  	the_content();
-    ?>
+      <div class="slide_content">
+  	  <h1><?php the_title();?></h1>
+  	  <div class="slide_text"><?php the_content(); ?></div>
+      </div>
   	</div>
     <?php 
   endwhile;
@@ -45,9 +45,6 @@ if($loop->have_posts()){ ?>
   echo '<h1>None found.</h1>';
 }
 ?>
-
-
-
 			</div><!-- #content -->
 		</div><!-- #container -->
 <?php

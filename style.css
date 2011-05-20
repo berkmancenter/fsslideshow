@@ -56,4 +56,31 @@ a img {
 }
 
 .fs_slide{
+height: 100%;
+width: 100%;
+float: right;
+background: url('template_bg.png') top left repeat-y;
+}
+
+.fs_slide .slide_content{
+/*  opacity: .8; */
+  background-color: #c51230;
+  float: right;
+  text-align: center;
+  width: 80%;
+  height: 100%;
+  color: white;
+}
+.fs_slide h1{
+  color: #c41232;
+  background: white;
+  border-bottom: 4px solid black;
+  padding: .5em;
+}
+.fs_slide .slide_text{
+  height: 100%;
+  width: 100%;
+  display: table-cell;
+  vertical-align: middle;
+  float: right;
 }
