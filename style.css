@@ -23,9 +23,24 @@ table, caption, tbody, tfoot, thead, tr, th, td {
 	vertical-align: baseline;
 }
 body {
-	line-height: 1;
-  height: 100%;
+	overflow:hidden; 		/* needed to eliminate scrollbars caused by the background image */
+	padding:0;margin:0;		/* necesarry for the raster to fill the screen */
+	height:100%;width:100%;
 }
+
+#bgimg {
+	position:absolute;
+	z-index: -1;
+}
+
+#container{
+	position:absolute;
+	overflow: hidden;
+	z-index: 5;				/* Place the new body above the background image */
+	overflow:auto; 			/* restore scrollbars for the content */
+	height:100%;width:100%;	/* Make the new body fill the screen */
+}
+
 h1, h2, h3, h4, h5, h6 {
 	clear: both;
 	font-weight: normal;
@@ -53,25 +68,31 @@ a img {
 }
 
 .fs_slide_container{
+	overflow: hidden;
 }
 
 .fs_slide{
 height: 100%;
 width: 100%;
 float: right;
-background: url('template_bg.png') top left repeat-y;
+  display: table;
 }
 
 .fs_slide .slide_content{
-/*  opacity: .8; */
+  opacity: .9; 
   background-color: #c51230;
   float: right;
   text-align: center;
   width: 80%;
-  height: 100%;
   color: white;
+  height: 100%;
+  display: table-cell;
+  vertical-align: middle;
 }
 .fs_slide h1{
+  font-family: 'Crimson Text', serif;
+  font-weight: bold;
+  font-size: 72px;
   color: #c41232;
   background: white;
   border-bottom: 4px solid black;
@@ -80,7 +101,10 @@ background: url('template_bg.png') top left repeat-y;
 .fs_slide .slide_text{
   height: 100%;
   width: 100%;
-  display: table-cell;
-  vertical-align: middle;
   float: right;
+  font-size: 36px;
+}
+
+#berkman-footer-links{
+display: none;
 }

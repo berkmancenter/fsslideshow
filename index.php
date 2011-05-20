@@ -14,11 +14,13 @@
 	?></title>
 <link rel="profile" href="http://gmpg.org/xfn/11" />
 <link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
+<link href='http://fonts.googleapis.com/css?family=Crimson+Text' rel='stylesheet' type='text/css'>
 <?php
 wp_head();
 ?>
 </head>
 <body <?php body_class(); ?>>
+	<img src="<?php echo get_bloginfo('stylesheet_directory') . '/2705052763_b3d9b4475a_o.jpg'; ?>" id="bgimg" />
     <div id="container">
 			<div id="content" role="main">
 
