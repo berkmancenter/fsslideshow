@@ -6,14 +6,16 @@ wp_enqueue_script('fullscreenr', get_bloginfo('stylesheet_directory') . '/jquery
 wp_enqueue_script('fsslideshow', get_bloginfo('stylesheet_directory') . '/fsslideshow.js');
 
 add_action( 'init', 'fsslideshow_create_post_types' );
+register_taxonomy('slideshow_category','fs_slide',array('labels' => array('name' => 'Slideshow Categories', 'singular_name' => 'Slideshow Category')));
 
 function fsslideshow_create_post_types() {
 	register_post_type( 'fs_slide',
 		array(
 			'labels' => array(
 				'name' => __( 'Slides' ),
-				'singular_name' => __( 'slide' )
+				'singular_name' => __( 'Slide' )
 			),
+    'taxonomies' => array('slideshow_category'),
     'supports' => array(
       'title',
       'editor',

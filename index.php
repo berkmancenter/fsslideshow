@@ -23,11 +23,11 @@ wp_head();
 	<img src="<?php echo get_bloginfo('stylesheet_directory') . '/2705052763_b3d9b4475a_o.jpg'; ?>" id="bgimg" />
     <div id="container">
 			<div id="content" role="main">
-
 <?php 
-$args = array( 'post_type' => 'fs_slide', 'orderby' => 'menu_order', 'order' => 'ASC');
+$slideshow_category = stripslashes($_GET['slideshow_category']);
+$args = array( 'post_type' => 'fs_slide', 'orderby' => 'menu_order', 'order' => 'ASC', 'slideshow_category' => $slideshow_category);
 $loop = new WP_Query( $args );
-if($loop->have_posts()){ ?>
+if(strlen($slideshow_category) > 0 && $loop->have_posts()){ ?>
   <div class="fs_slide_container">
   <?php 
   while ( $loop->have_posts() ) : $loop->the_post();
@@ -44,7 +44,8 @@ if($loop->have_posts()){ ?>
   </div> <!-- fs_slide_container -->
 <?php 
   } else {
-  echo '<h1>None found.</h1>';
+  echo '<div class="fs_slide"><div class="slide_content"><h1>None found.</h1></div></div>';
+  // TODO - Put in a taxonomy selector.
 }
 ?>
 			</div><!-- #content -->
