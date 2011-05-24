@@ -26,6 +26,11 @@ wp_head();
 			<div id="content" role="main">
 <?php 
 $slideshow_category = stripslashes($_GET['slideshow_cat']);
+
+if(strlen($slideshow_category) == 0){
+	$slideshow_category = get_option('fsslideshow_default_slideshow_category');
+}
+
 $args = array( 'post_type' => 'fs_slide', 'orderby' => 'menu_order', 'order' => 'ASC', 'slideshow_category' => $slideshow_category);
 $loop = new WP_Query( $args );
 if(strlen($slideshow_category) > 0 && $loop->have_posts()){ ?>
