@@ -2,6 +2,7 @@
 
 wp_enqueue_script('jquery');
 wp_enqueue_script('cycle', get_bloginfo('stylesheet_directory') . '/jquery.cycle.all.min.js');
+wp_enqueue_script('dotimeout', get_bloginfo('stylesheet_directory') . '/jquery.ba-dotimeout.min.js');
 wp_enqueue_script('fullscreenr', get_bloginfo('stylesheet_directory') . '/jquery.fullscreenr.js');
 wp_enqueue_script('fsslideshow', get_bloginfo('stylesheet_directory') . '/fsslideshow.js');
 
