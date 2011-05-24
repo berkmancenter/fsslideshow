@@ -22,6 +22,9 @@ table, caption, tbody, tfoot, thead, tr, th, td {
 	padding: 0;
 	vertical-align: baseline;
 }
+html{
+	overflow: hidden;
+}
 body {
 	overflow:hidden; 		/* needed to eliminate scrollbars caused by the background image */
 	padding:0;margin:0;		/* necesarry for the raster to fill the screen */

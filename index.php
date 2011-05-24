@@ -2,6 +2,7 @@
 <html <?php language_attributes(); ?>>
 <head>
 <meta charset="<?php bloginfo( 'charset' ); ?>" />
+<!-- TODO - Figure out why the content gets a scrollbar on the refresh -->
 <title><?php
 	global $page, $paged;
 	wp_title( '|', true, 'right' );
@@ -24,7 +25,7 @@ wp_head();
     <div id="container">
 			<div id="content" role="main">
 <?php 
-$slideshow_category = stripslashes($_GET['slideshow_category']);
+$slideshow_category = stripslashes($_GET['slideshow_cat']);
 $args = array( 'post_type' => 'fs_slide', 'orderby' => 'menu_order', 'order' => 'ASC', 'slideshow_category' => $slideshow_category);
 $loop = new WP_Query( $args );
 if(strlen($slideshow_category) > 0 && $loop->have_posts()){ ?>
